@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Mathe</string>
+    <string name="copy">Copy</string>
+    <string name="export">Export</string>
+    <string name="share">Share</string>
+    <string name="add">Add</string>
+    <string name="sum">SUM()</string>
+    <string name="minus">MINUS()</string>
+    <string name="avg">AVG()</string>
+    <string name="max">MAX()</string>
+    <string name="min">MIN()</string>
+    <string name="count">COUNT()</string>
+    <string name="median">MEDIAN()</string>
+    <string name="clear">Clear</string>
+    <string name="comment">Comments</string>
+    <string name="ok">OK</string>
+    <string name="select_row">Please select a row</string>
+    <string name="operation_failed">Operation Failed</string>
+    <string name="failed_to_save">Failed to saved file</string>
+    <string name="failed_to_share">Failed to share file</string>
+
+    <string name="app_id">ca-app-pub-3211067144339258~6363310405</string>
+    <string name="interstitial_id">ca-app-pub-3211067144339258/8797902055</string>
+
+    <!--    <string name="app_id">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--    <string name="interstitial_id">ca-app-pub-3940256099942544/1033173712</string>-->
+
+</resources>

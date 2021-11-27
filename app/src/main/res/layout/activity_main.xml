@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:fitsSystemWindows="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <ImageView
+                    android:id="@+id/directionLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_eft"
+                    android:visibility="invisible" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:scrollIndicators="right">
+
+                    <LinearLayout
+                        android:id="@+id/barItems"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/avg"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/sum"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/minus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/minus"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/max"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/max"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/min"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/count"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/median"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:padding="16dp"
+                            android:text="@string/median"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:id="@+id/directionRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_right" />
+
+                <FrameLayout
+                    android:id="@+id/equal"
+                    android:layout_width="0dp"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight=".5"
+                    android:background="@color/colorRed">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_equal" />
+                </FrameLayout>
+            </LinearLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <include
+                android:id="@+id/spreadsheet"
+                layout="@layout/spreadsheet" />
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
